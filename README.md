@@ -2,3 +2,15 @@
 
 
 All TACT and TACT Labs related errors are archived here
+
+
+Simple Goal
+
+Stop the system for once
+
+So you won't stop the system again!
+
+
+Archive every error you go through in TACT/TACT Labs work
+
+So we won't waste our time on googling the error
