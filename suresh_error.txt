@@ -9,6 +9,22 @@ WebSocket transport not available. Install eventlet or gevent and gevent-websock
 127.0.0.1 - - [25/Apr/2020 12:19:49] "GET /socket.io/?EIO=3&transport=polling&t=N6o8qfp HTTP/1.1" 400 -
 
 ---------------------------------------------------------------------------------------------------------------/
+(py37) suresh@suresh-py:~/tact/flask-socketio-simplegame$ python app.py
+current point in server: 7
+Traceback (most recent call last):
+  File "src/gevent/greenlet.py", line 854, in gevent._greenlet.Greenlet.run
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/socketio/server.py", line 679, in _handle_event_internal
+    r = server._trigger_event(data[0], namespace, sid, *data[1:])
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/socketio/server.py", line 708, in _trigger_event
+    return self.handlers[namespace][event](*args)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/flask_socketio/__init__.py", line 283, in _handler
+    *args)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/flask_socketio/__init__.py", line 713, in _handle_event
+    ret = handler(*args)
+  File "app.py", line 37, in test_message
+    totoal_point = totoal_point + current_point
+UnboundLocalError: local variable 'totoal_point' referenced before assignment
+2020-04-25T17:32:11Z <Thread at 0x7f708504bef0: <bound method Server._handle_event_internal of <socketio.server.Server object at 0x7f7086aaa450>>(<socketio.server.Server object at 0x7f7086aaa450>, 'f70254647ef24905b4e73d328979df30', ['my_event', {'data': 'Im connected!'}], '/test', None)> failed with UnboundLocalError
 
 ---------------------------------------------------------------------------------------------------------------/
 ---------------------------------------------------------------------------------------------------------------/
