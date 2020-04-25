@@ -1,0 +1,100 @@
+(python37) D:\works\tact\celery-flask-socketio-file-writer>pip install gevent
+Collecting gevent
+  Downloading gevent-20.4.0-cp37-cp37m-win_amd64.whl (1.5 MB)
+     |████████████████████████████████| 1.5 MB 297 kB/s
+Collecting greenlet>=0.4.14; platform_python_implementation == "CPython"
+  Downloading greenlet-0.4.15-cp37-cp37m-win_amd64.whl (16 kB)
+Requirement already satisfied: cffi>=1.12.2; platform_python_implementation == "
+CPython" and sys_platform == "win32" in c:\users\arun\anaconda3\envs\python37\li
+b\site-packages (from gevent) (1.14.0)
+Requirement already satisfied: pycparser in c:\users\arun\anaconda3\envs\python3
+7\lib\site-packages (from cffi>=1.12.2; platform_python_implementation == "CPyth
+on" and sys_platform == "win32"->gevent) (2.20)
+Installing collected packages: greenlet, gevent
+Successfully installed gevent-20.4.0 greenlet-0.4.15
+
+(python37) D:\works\tact\celery-flask-socketio-file-writer>celery worker -A app.
+celery --loglevel=info
+c:\users\arun\anaconda3\envs\python37\lib\site-packages\celery\backends\amqp.py:
+67: CPendingDeprecationWarning:
+    The AMQP result backend is scheduled for deprecation in     version 4.0 and
+removal in version v5.0.     Please use RPC backend or a persistent backend.
+
+  alternative='Please use RPC backend or a persistent backend.')
+
+ -------------- celery@ABI-LAP66 v4.1.1 (latentcall)
+---- **** -----
+--- * ***  * -- Windows-8.1-6.3.9600-SP0 2020-04-25 08:48:26
+-- * - **** ---
+- ** ---------- [config]
+- ** ---------- .> app:         app:0xc6eb997548
+- ** ---------- .> transport:   amqp://guest:**@localhost:5672//
+- ** ---------- .> results:     amqp://
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** -----
+ -------------- [queues]
+                .> celery           exchange=celery(direct) key=celery
+
+
+[tasks]
+  . task.message
+
+[2020-04-25 08:48:26,310: CRITICAL/MainProcess] Unrecoverable error: AttributeEr
+ror("Can't pickle local object 'Pool.__init__.<locals>.Process'")
+Traceback (most recent call last):
+  File "c:\users\arun\anaconda3\envs\python37\lib\site-packages\celery\worker\wo
+rker.py", line 205, in start
+    self.blueprint.start(self)
+  File "c:\users\arun\anaconda3\envs\python37\lib\site-packages\celery\bootsteps
+.py", line 119, in start
+    step.start(parent)
+  File "c:\users\arun\anaconda3\envs\python37\lib\site-packages\celery\bootsteps
+.py", line 370, in start
+    return self.obj.start()
+  File "c:\users\arun\anaconda3\envs\python37\lib\site-packages\celery\concurren
+cy\base.py", line 131, in start
+    self.on_start()
+  File "c:\users\arun\anaconda3\envs\python37\lib\site-packages\celery\concurren
+cy\prefork.py", line 112, in on_start
+    **self.options)
+  File "c:\users\arun\anaconda3\envs\python37\lib\site-packages\billiard\pool.py
+", line 1008, in __init__
+    self._create_worker_process(i)
+  File "c:\users\arun\anaconda3\envs\python37\lib\site-packages\billiard\pool.py
+", line 1117, in _create_worker_process
+    w.start()
+  File "c:\users\arun\anaconda3\envs\python37\lib\site-packages\billiard\process
+.py", line 122, in start
+    self._popen = self._Popen(self)
+  File "c:\users\arun\anaconda3\envs\python37\lib\site-packages\billiard\context
+.py", line 383, in _Popen
+    return Popen(process_obj)
+  File "c:\users\arun\anaconda3\envs\python37\lib\site-packages\billiard\popen_s
+pawn_win32.py", line 79, in __init__
+    reduction.dump(process_obj, to_child)
+  File "c:\users\arun\anaconda3\envs\python37\lib\site-packages\billiard\reducti
+on.py", line 99, in dump
+    ForkingPickler(file, protocol).dump(obj)
+AttributeError: Can't pickle local object 'Pool.__init__.<locals>.Process'
+
+(python37) D:\works\tact\celery-flask-socketio-file-writer>Traceback (most recen
+t call last):
+  File "<string>", line 1, in <module>
+  File "c:\users\arun\anaconda3\envs\python37\lib\site-packages\billiard\spawn.p
+y", line 159, in spawn_main
+    new_handle = steal_handle(parent_pid, pipe_handle)
+  File "c:\users\arun\anaconda3\envs\python37\lib\site-packages\billiard\reducti
+on.py", line 121, in steal_handle
+    _winapi.PROCESS_DUP_HANDLE, False, source_pid)
+OSError: [WinError 87] The parameter is incorrect
+
+
+---------------------------------------------------------------------------------------------------------------/
+
+
+---------------------------------------------------------------------------------------------------------------/
+---------------------------------------------------------------------------------------------------------------/
+---------------------------------------------------------------------------------------------------------------/
+---------------------------------------------------------------------------------------------------------------/
+---------------------------------------------------------------------------------------------------------------/
