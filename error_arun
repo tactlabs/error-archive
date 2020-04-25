@@ -91,7 +91,131 @@ OSError: [WinError 87] The parameter is incorrect
 
 
 ---------------------------------------------------------------------------------------------------------------/
+(python37) D:\works\tact\celery-flask-socketio-file-writer>pip install gevent==1
+.1rc1
+Collecting gevent==1.1rc1
+  Downloading gevent-1.1rc1.tar.gz (1.7 MB)
+     |████████████████████████████████| 1.7 MB 1.1 MB/s
+Requirement already satisfied: greenlet>=0.4.9 in c:\users\arun\anaconda3\envs\p
+ython37\lib\site-packages (from gevent==1.1rc1) (0.4.15)
+Building wheels for collected packages: gevent
+  Building wheel for gevent (setup.py) ... error
+  ERROR: Command errored out with exit status 1:
+   command: 'C:\Users\Arun\anaconda3\envs\python37\python.exe' -u -c 'import sys
+, setuptools, tokenize; sys.argv[0] = '"'"'C:\\Users\\Arun\\AppData\\Local\\Temp
+\\pip-install-vwfd2fi7\\gevent\\setup.py'"'"'; __file__='"'"'C:\\Users\\Arun\\Ap
+pData\\Local\\Temp\\pip-install-vwfd2fi7\\gevent\\setup.py'"'"';f=getattr(tokeni
+ze, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\
+n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' bdist_wheel -d
+'C:\Users\Arun\AppData\Local\Temp\pip-wheel-m0m99n_f'
+       cwd: C:\Users\Arun\AppData\Local\Temp\pip-install-vwfd2fi7\gevent\
+  Complete output (55 lines):
+  running bdist_wheel
+  running build
+  running build_py
+  creating build
+  creating build\lib.win-amd64-3.7
+  creating build\lib.win-amd64-3.7\gevent
+  copying gevent\backdoor.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\baseserver.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\builtins.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\core.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\corecffi.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\coros.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\event.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\fileobject.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\greenlet.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\hub.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\local.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\lock.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\monkey.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\os.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\pool.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\pywsgi.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\queue.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\resolver_ares.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\resolver_thread.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\select.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\server.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\signal.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\socket.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\ssl.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\subprocess.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\thread.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\threading.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\threadpool.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\timeout.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\util.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\win32util.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\wsgi.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\_fileobject2.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\_fileobject3.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\_fileobjectcommon.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\_fileobjectposix.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\_socket2.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\_socket3.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\_socketcommon.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\_ssl2.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\_ssl3.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\_sslgte279.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\_tblib.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\_threading.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\_util_py2.py -> build\lib.win-amd64-3.7\gevent
+  copying gevent\__init__.py -> build\lib.win-amd64-3.7\gevent
+  running build_ext
+  building 'gevent.core' extension
+  error: Microsoft Visual C++ 14.0 is required. Get it with "Build Tools for Vis
+ual Studio": https://visualstudio.microsoft.com/downloads/
+  ----------------------------------------
+  ERROR: Failed building wheel for gevent
+  Running setup.py clean for gevent
+Failed to build gevent
+Installing collected packages: gevent
+  Attempting uninstall: gevent
+    Found existing installation: gevent 20.4.0
+    Uninstalling gevent-20.4.0:
+      Successfully uninstalled gevent-20.4.0
+    Running setup.py install for gevent ... error
+    ERROR: Command errored out with exit status 1:
+     command: 'C:\Users\Arun\anaconda3\envs\python37\python.exe' -u -c 'import s
+ys, setuptools, tokenize; sys.argv[0] = '"'"'C:\\Users\\Arun\\AppData\\Local\\Te
+mp\\pip-install-vwfd2fi7\\gevent\\setup.py'"'"'; __file__='"'"'C:\\Users\\Arun\\
+AppData\\Local\\Temp\\pip-install-vwfd2fi7\\gevent\\setup.py'"'"';f=getattr(toke
+nize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"
+'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --rec
+ord 'C:\Users\Arun\AppData\Local\Temp\pip-record-5xwmlz16\install-record.txt' --
+single-version-externally-managed --compile --install-headers 'C:\Users\Arun\ana
+conda3\envs\python37\Include\gevent'
+         cwd: C:\Users\Arun\AppData\Local\Temp\pip-install-vwfd2fi7\gevent\
+    Complete output (6 lines):
+    running install
+    running build
+    running build_py
+    running build_ext
+    building 'gevent.core' extension
+    error: Microsoft Visual C++ 14.0 is required. Get it with "Build Tools for V
+isual Studio": https://visualstudio.microsoft.com/downloads/
+    ----------------------------------------
+  Rolling back uninstall of gevent
+  Moving to c:\users\arun\anaconda3\envs\python37\lib\site-packages\gevent-20.4.
+0.dist-info\
+   from c:\users\arun\anaconda3\envs\python37\lib\site-packages\~event-20.4.0.di
+st-info
+  Moving to c:\users\arun\anaconda3\envs\python37\lib\site-packages\gevent\
+   from c:\users\arun\anaconda3\envs\python37\lib\site-packages\~event
+ERROR: Command errored out with exit status 1: 'C:\Users\Arun\anaconda3\envs\pyt
+hon37\python.exe' -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'C:
+\\Users\\Arun\\AppData\\Local\\Temp\\pip-install-vwfd2fi7\\gevent\\setup.py'"'"'
+; __file__='"'"'C:\\Users\\Arun\\AppData\\Local\\Temp\\pip-install-vwfd2fi7\\gev
+ent\\setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.re
+ad().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__
+, '"'"'exec'"'"'))' install --record 'C:\Users\Arun\AppData\Local\Temp\pip-recor
+d-5xwmlz16\install-record.txt' --single-version-externally-managed --compile --i
+nstall-headers 'C:\Users\Arun\anaconda3\envs\python37\Include\gevent' Check the
+logs for full command output.
 
+(python37) D:\works\tact\celery-flask-socketio-file-writer>pip install gevent==1
+.1rc1
 
 ---------------------------------------------------------------------------------------------------------------/
 ---------------------------------------------------------------------------------------------------------------/
