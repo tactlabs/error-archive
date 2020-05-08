@@ -253,6 +253,8 @@ INFO  [alembic.runtime.migration] Will assume transactional DDL.
 ERROR [root] Error: Target database is not up to date.
 
 
+ERROR:3
+
 -----------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
