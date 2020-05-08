@@ -27,7 +27,241 @@ UnboundLocalError: local variable 'totoal_point' referenced before assignment
 2020-04-25T17:32:11Z <Thread at 0x7f708504bef0: <bound method Server._handle_event_internal of <socketio.server.Server object at 0x7f7086aaa450>>(<socketio.server.Server object at 0x7f7086aaa450>, 'f70254647ef24905b4e73d328979df30', ['my_event', {'data': 'Im connected!'}], '/test', None)> failed with UnboundLocalError
 
 ---------------------------------------------------------------------------------------------------------------/
+\(py37) suresh@suresh-py:~/tact/boto3-imageupload$ python app.py
+Traceback (most recent call last):
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/boto3/s3/transfer.py", line 279, in upload_file
+    future.result()
+  File "/home/suresh/tact/boto3/src/s3transfer/s3transfer/futures.py", line 106, in result
+    return self._coordinator.result()
+  File "/home/suresh/tact/boto3/src/s3transfer/s3transfer/futures.py", line 265, in result
+    raise self._exception
+  File "/home/suresh/tact/boto3/src/s3transfer/s3transfer/tasks.py", line 126, in __call__
+    return self._execute_main(kwargs)
+  File "/home/suresh/tact/boto3/src/s3transfer/s3transfer/tasks.py", line 150, in _execute_main
+    return_value = self._main(**kwargs)
+  File "/home/suresh/tact/boto3/src/s3transfer/s3transfer/upload.py", line 692, in _main
+    client.put_object(Bucket=bucket, Key=key, Body=body, **extra_args)
+  File "/home/suresh/tact/boto3/src/botocore/botocore/client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "/home/suresh/tact/boto3/src/botocore/botocore/client.py", line 626, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (InvalidAccessKeyId) when calling the PutObject operation: The AWS Access Key Id you provided does not exist in our records.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "app.py", line 28, in <module>
+    upload_file('/home/suresh/Downloads/mountain.jpg','teamtact','mountain')
+  File "app.py", line 22, in upload_file
+    response = s3_client.upload_file(file_name, bucket, object_name)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/boto3/s3/inject.py", line 131, in upload_file
+    extra_args=ExtraArgs, callback=Callback)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/boto3/s3/transfer.py", line 287, in upload_file
+    filename, '/'.join([bucket, key]), e))
+boto3.exceptions.S3UploadFailedError: Failed to upload /home/suresh/Downloads/mountain.jpg to teamtact/mountain: An error occurred (InvalidAccessKeyId) when calling the PutObject operation: The AWS Access Key Id you provided does not exist in our records.
+
 ---------------------------------------------------------------------------------------------------------------/
 ---------------------------------------------------------------------------------------------------------------/
 ---------------------------------------------------------------------------------------------------------------/
 ---------------------------------------------------------------------------------------------------------------/
+
+Minio Server install error
+
+Detected default credentials 'minioadmin:minioadmin', please change the credentials immediately using 'MINIO_ACCESS_KEY' and 'MINIO_SECRET_KEY'
+
+AttributeError: 'QtGui_cls' object has no attribute 'QApplication'
+
+https://stackoverflow.com/questions/34959409/qt5-attributeerror-module-object-has-no-attribute-qapplication
+
+---------------------------------------------------------------------------------------------------------------/
+---------------------------------------------------------------------------------------------------------------/
+---------------------------------------------------------------------------------------------------------------/
+---------------------------------------------------------------------------------------------------------------/
+Day # 14 / 61  - Apr 28, 2020 - Tuesday
+
+
+(py37dl) suresh@suresh-py:~/tact/DeepSpeech-examples/mic_vad_streaming$ python mic_vad_streaming.py -f /home/suresh/tact/datasets/sample.wav -m /home/suresh/tact/datasets/deepspeech-0.7.0-models.pbmm
+Initializing model...
+INFO:root:ARGS.model: /home/suresh/tact/datasets/deepspeech-0.7.0-models.pbmm
+TensorFlow: v1.15.0-24-gceb46aa
+DeepSpeech: v0.7.0-0-g3fbbca2
+2020-04-28 20:43:29.228889: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+INFO:root:ARGS.scorer: kenlm.scorer
+ALSA lib pcm_dsnoop.c:618:(snd_pcm_dsnoop_open) unable to open slave
+ALSA lib pcm_dmix.c:1052:(snd_pcm_dmix_open) unable to open slave
+ALSA lib pcm.c:2495:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.rear
+ALSA lib pcm.c:2495:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.center_lfe
+ALSA lib pcm.c:2495:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.side
+ALSA lib pcm_dmix.c:1052:(snd_pcm_dmix_open) unable to open slave
+Listening (ctrl-C to exit)...
+\ Segmentation fault (core dumped)
+(py37dl) suresh@suresh-py:~/tact/DeepSpeech-examples/mic_vad_streaming$ 
+
+---------------------------------------------------------------------------------
+(py37dl) suresh@suresh-py:~/tact/DeepSpeech-examples/mic_vad_streaming$ python mic_vad_streaming.py -f /home/suresh/tact/datasets/sample.wav -m /home/suresh/tact/datasets/deepspeech-0.7.0-models.tflite
+Initializing model...
+INFO:root:ARGS.model: /home/suresh/tact/datasets/deepspeech-0.7.0-models.tflite
+TensorFlow: v1.15.0-24-gceb46aa
+DeepSpeech: v0.7.0-0-g3fbbca2
+Warning: reading entire model file into memory. Transform model file into an mmapped graph to reduce heap usage.
+2020-04-28 20:55:57.398873: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Data loss: Can't parse /home/suresh/tact/datasets/deepspeech-0.7.0-models.tflite as binary proto
+Traceback (most recent call last):
+  File "mic_vad_streaming.py", line 224, in <module>
+    main(ARGS)
+  File "mic_vad_streaming.py", line 163, in main
+    model = deepspeech.Model(ARGS.model)
+  File "/home/suresh/anaconda3/envs/py37dl/lib/python3.7/site-packages/deepspeech/__init__.py", line 38, in __init__
+    raise RuntimeError("CreateModel failed with '{}' (0x{:X})".format(deepspeech.impl.ErrorCodeToErrorMessage(status),status))
+RuntimeError: CreateModel failed with 'Error reading the proto buffer model file.' (0x3005)
+(py37dl) suresh@suresh-py:~/tact/DeepSpeech-examples/mic_vad_streaming$ 
+
+----------------------------------------------------
+(py37dl) suresh@suresh-py:~/tact/DeepSpeech-examples/vad_transcriber$ python audioTranscript_cmd.py --audio "/home/suresh/tact/datasets/sample.wav" --model "/home/suresh/tact/datasets/models/"
+DEBUG:root:Transcribing audio file @ /home/suresh/tact/datasets/sample.wav
+directory name : /home/suresh/tact/datasets/models/
+DEBUG:root:Found Model: /home/suresh/tact/datasets/models/output_graph.pb
+DEBUG:root:Found scorer: /home/suresh/tact/datasets/models//kenlm.scorer
+TensorFlow: v1.15.0-24-gceb46aa
+DeepSpeech: v0.7.0-alpha.2-0-g9dd63d5
+Warning: reading entire model file into memory. Transform model file into an mmapped graph to reduce heap usage.
+2020-04-28 21:43:13.394815: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+Not found: Op type not registered 'VariableV2' in binary running on suresh-py. Make sure the Op and Kernel are registered in the binary running in this process. Note that if you are loading a saved graph which used ops from tf.contrib, accessing (e.g.) `tf.contrib.resampler` should be done before importing the graph, as contrib ops are lazily registered when the module is first accessed.
+Traceback (most recent call last):
+  File "audioTranscript_cmd.py", line 92, in <module>
+    main(sys.argv[1:])
+  File "audioTranscript_cmd.py", line 40, in main
+    model_retval = wavTranscriber.load_model(output_graph, scorer)
+  File "/home/suresh/tact/DeepSpeech-examples/vad_transcriber/wavTranscriber.py", line 18, in load_model
+    ds = Model(models)
+  File "/home/suresh/anaconda3/envs/py37dl/lib/python3.7/site-packages/deepspeech/__init__.py", line 38, in __init__
+    raise RuntimeError("CreateModel failed with error code {}".format(status))
+RuntimeError: CreateModel failed with error code 12294
+
+-----------------------------------------------------------------------------
+ERROR1:
+
+sqlalchemy.exc.DataError: (psycopg2.errors.InvalidTextRepresentation) invalid input syntax for integer: "d68305ac-8fff-11ea-a1fe-4845208d9744"
+LINE 1: ...t_result, test_cases_count, passed_count) VALUES ('d68305ac-...
+                                                             ^
+
+[SQL: INSERT INTO "PC_REST_API" (api_postman_id, job_id, url_path, rest_result, test_cases_count, passed_count) VALUES (%(api_postman_id)s, %(job_id)s, %(url_path)s, %(rest_result)s, %(test_cases_count)s, %(passed_count)s) RETURNING "PC_REST_API".rid]
+[parameters: {'api_postman_id': 'd68305ac-8fff-11ea-a1fe-4845208d9744', 'job_id': 9, 'url_path': 'https://reqres.in/api/users?page=2', 'rest_result': '{\n    "page": 2,\n    "per_page": 6,\n    "total": 12,\n    "total_pages": 2,\n    "data": [\n        {\n            "id": 7,\n            "email":  ... (1606 characters truncated) ...       "text": "A weekly newsletter focusing on software development, infrastructure, the server, performance, and the stack end of things."\n    }\n}', 'test_cases_count': 0, 'passed_count': 0}]
+(Background on this error at: http://sqlalche.me/e/9h9h)
+
+
+(py37) suresh@suresh-py:~/tact/postclick-server-flask$ python manage.py db upgrade
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+INFO  [alembic.runtime.migration] Running upgrade  -> 075e3ce55b6e, basic sql migrations
+INFO  [alembic.runtime.migration] Running upgrade 075e3ce55b6e -> 4d489442d91f, pcuser table added
+INFO  [alembic.runtime.migration] Running upgrade 4d489442d91f -> c297fdb79f9d, JOB, REST_API, TEST_CASE table added
+INFO  [alembic.runtime.migration] Running upgrade c297fdb79f9d -> 4fb54c8ee241, api_postman_id datatype modified
+Traceback (most recent call last):
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.DuplicateTable: relation "PC_JOB" already exists
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "manage.py", line 24, in <module>
+    manager.run()
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/flask_script/__init__.py", line 417, in run
+    result = self.handle(argv[0], argv[1:])
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/flask_script/__init__.py", line 386, in handle
+    res = handle(*args, **config)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/flask_script/commands.py", line 216, in __call__
+    return self.run(*args, **kwargs)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/flask_migrate/__init__.py", line 96, in wrapped
+    f(*args, **kwargs)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/flask_migrate/__init__.py", line 271, in upgrade
+    command.upgrade(config, revision, sql=sql, tag=tag)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/alembic/command.py", line 298, in upgrade
+    script.run_env()
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/alembic/script/base.py", line 489, in run_env
+    util.load_python_file(self.dir, "env.py")
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/alembic/util/pyfiles.py", line 98, in load_python_file
+    module = load_module_py(module_id, path)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/alembic/util/compat.py", line 184, in load_module_py
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "migrations/env.py", line 97, in <module>
+    run_migrations_online()
+  File "migrations/env.py", line 90, in run_migrations_online
+    context.run_migrations()
+  File "<string>", line 8, in run_migrations
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/alembic/runtime/environment.py", line 846, in run_migrations
+    self.get_context().run_migrations(**kw)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/alembic/runtime/migration.py", line 520, in run_migrations
+    step.migration_fn(**kw)
+  File "/home/suresh/tact/postclick-server-flask/migrations/versions/4fb54c8ee241_api_postman_id_datatype_modified.py", line 29, in upgrade
+    sa.UniqueConstraint('name')
+  File "<string>", line 8, in create_table
+  File "<string>", line 3, in create_table
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/alembic/operations/ops.py", line 1252, in create_table
+    return operations.invoke(op)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/alembic/operations/base.py", line 374, in invoke
+    return fn(self, operation)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/alembic/operations/toimpl.py", line 101, in create_table
+    operations.impl.create_table(table)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/alembic/ddl/impl.py", line 258, in create_table
+    self._exec(schema.CreateTable(table))
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/alembic/ddl/impl.py", line 140, in _exec
+    return conn.execute(construct, *multiparams, **params)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 984, in execute
+    return meth(self, multiparams, params)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/sqlalchemy/sql/ddl.py", line 72, in _execute_on_connection
+    return connection._execute_ddl(self, multiparams, params)
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1046, in _execute_ddl
+    compiled,
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1288, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1482, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/suresh/anaconda3/envs/py37/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.DuplicateTable) relation "PC_JOB" already exists
+
+[SQL: 
+CREATE TABLE "PC_JOB" (
+	jid SERIAL NOT NULL, 
+	name VARCHAR(50), 
+	rest_api_count INTEGER, 
+	test_cases_count INTEGER, 
+	created VARCHAR(50), 
+	passed_count INTEGER, 
+	PRIMARY KEY (jid), 
+	UNIQUE (name)
+)
+
+]
+(Background on this error at: http://sqlalche.me/e/f405)
+
+ERROR2:
+(py37) suresh@suresh-py:~/tact/postclick-server-flask$ python manage.py db migrate
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+ERROR [root] Error: Target database is not up to date.
+
+
+-----------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+
