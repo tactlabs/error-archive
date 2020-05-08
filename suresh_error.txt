@@ -252,10 +252,21 @@ INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
 INFO  [alembic.runtime.migration] Will assume transactional DDL.
 ERROR [root] Error: Target database is not up to date.
 
-
-ERROR:3
-
 -----------------------------------------------------------------------------
+
+Julia error:
+
+(base) suresh@suresh-py:~/tact/juliavil$ julia knn_1.jl 
+ERROR: LoadError: UndefVarError: readtable not defined
+Stacktrace:
+ [1] top-level scope at none:0
+ [2] include at ./boot.jl:326 [inlined]
+ [3] include_relative(::Module, ::String) at ./loading.jl:1038
+ [4] include(::Module, ::String) at ./sysimg.jl:29
+ [5] exec_options(::Base.JLOptions) at ./client.jl:267
+ [6] _start() at ./client.jl:436
+in expression starting at /home/suresh/tact/juliavil/knn_1.jl:11
+
 
 -----------------------------------------------------------------------------
 -----------------------------------------------------------------------------
