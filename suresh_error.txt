@@ -267,8 +267,30 @@ Stacktrace:
  [6] _start() at ./client.jl:436
 in expression starting at /home/suresh/tact/juliavil/knn_1.jl:11
 
-
 -----------------------------------------------------------------------------
+
+AWS lambda error:
+
+Body:
+{
+  "message": "Internal server error"
+}
+
+Headers:
+{"x-amzn-ErrorType":"InternalServerErrorException"}
+
+Logs:
+Execution log for request 59f75051-dbc1-4ad9-a197-416a5ffb5bb5
+Sun May 10 00:30:23 UTC 2020 : Starting execution for request: 59f75051-dbc1-4ad9-a197-416a5ffb5bb5
+Sun May 10 00:30:23 UTC 2020 : HTTP Method: GET, Resource Path: /tact-api-gateway-rc
+Sun May 10 00:30:23 UTC 2020 : Method request path: {}
+Sun May 10 00:30:23 UTC 2020 : Method request query string: {}
+Sun May 10 00:30:23 UTC 2020 : Method request headers: {}
+Sun May 10 00:30:23 UTC 2020 : Method request body before transformations: 
+Sun May 10 00:30:23 UTC 2020 : Execution failed due to configuration error: API Gateway does not have permission to assume the provided role arn:aws:iam::908379828903:role/tact-lambda-execution-role
+Sun May 10 00:30:23 UTC 2020 : Method completed with status: 500
+
+
 -----------------------------------------------------------------------------
 -----------------------------------------------------------------------------
 -----------------------------------------------------------------------------
