@@ -291,6 +291,47 @@ Sun May 10 00:30:23 UTC 2020 : Execution failed due to configuration error: API 
 Sun May 10 00:30:23 UTC 2020 : Method completed with status: 500
 
 
+When path is empty (optional):
+{
+  "logref": "0a984d44-14a6-4c18-81fa-f5fd5cbf875f",
+  "message": "AWS ARN for integration contains invalid path"
+}
+
+
+Body:
+<AccessDeniedException>
+  <Message>Unable to determine service/operation name to be authorized</Message>
+</AccessDeniedException>
+
+Headers:
+{"X-Amzn-Trace-Id":"Root=1-5eb74f79-87a7f4b4d658495aa11c4394","Content-Type":"application/json"}
+
+Logs:
+Execution log for request d37fe0dd-ea6a-4642-8fc7-770ab52783f1
+Sun May 10 00:48:57 UTC 2020 : Starting execution for request: d37fe0dd-ea6a-4642-8fc7-770ab52783f1
+Sun May 10 00:48:57 UTC 2020 : HTTP Method: GET, Resource Path: /tact-api-gateway-rc
+Sun May 10 00:48:57 UTC 2020 : Method request path: {}
+Sun May 10 00:48:57 UTC 2020 : Method request query string: {}
+Sun May 10 00:48:57 UTC 2020 : Method request headers: {}
+Sun May 10 00:48:57 UTC 2020 : Method request body before transformations: 
+Sun May 10 00:48:57 UTC 2020 : Endpoint request URI: https://lambda.us-east-1.amazonaws.com//2015-03-31/functions/arn:aws:lambda:us-east-1:908379828903:function:tact_content_highlighter
+Sun May 10 00:48:57 UTC 2020 : Endpoint request headers: {x-amzn-lambda-integration-tag=d37fe0dd-ea6a-4642-8fc7-770ab52783f1, Authorization=*********************************************************************************************************************************************************************************************************************************************************************3baa0a, X-Amz-Date=20200510T004857Z, x-amzn-apigateway-api-id=hsumbl1qh5, Accept=application/json, User-Agent=AmazonAPIGateway_hsumbl1qh5, X-Amz-Security-Token=IQoJb3JpZ2luX2VjEMH//////////wEaCXVzLWVhc3QtMSJGMEQCIG3uCDbomtKeC17Eg8Dbrbqqo0KbNNCSektWzBOgphBXAiBF0v6wIL+S51uX5CO6Zq8mwSs+v3eo6LIRscMaovr7pyqoAgj6//////////8BEAEaDDkwODM3OTgyODkwMyIMdmgQ6hTkYGBItJRZKvwBODkUatkZh4C/A2JQllJFBPgeMPw86wfEsvz+3d0O04MYthp6WVyPL+eaTZMcNMFJGrYQvGj8wAOPcKX/fRAxhbeVXYqp1MF7nRAeroxxNCDmkP+KyDW4NSRoqgxOkMfMnSTICrAFhM+G7DJNv9Z79QeGK+kdkQxTXZCtUV17/Cdo9MgiL2wEcgfVLrQr6MsgBgaMzwvDiz4iN+/YUdkB5FoMZm0b2iSEmCVoJHRqXgEJladHsoIn5zz8MiULWXi5Jl2GCSASqt3wM4ZjRYfUm8BMtNzvhqsmtt [TRUNCATED]
+Sun May 10 00:48:57 UTC 2020 : Endpoint request body after transformations: 
+Sun May 10 00:48:57 UTC 2020 : Sending request to https://lambda.us-east-1.amazonaws.com//2015-03-31/functions/arn:aws:lambda:us-east-1:908379828903:function:tact_content_highlighter
+Sun May 10 00:48:57 UTC 2020 : Received response. Status: 403, Integration latency: 4 ms
+Sun May 10 00:48:57 UTC 2020 : Endpoint response headers: {Date=Sun, 10 May 2020 00:48:57 GMT, Content-Length=130, Connection=keep-alive, x-amzn-RequestId=d1a86526-443c-4c3c-84d5-5d11198ca5d2}
+Sun May 10 00:48:57 UTC 2020 : Endpoint response body before transformations: <AccessDeniedException>
+  <Message>Unable to determine service/operation name to be authorized</Message>
+</AccessDeniedException>
+
+Sun May 10 00:48:57 UTC 2020 : Method response body after transformations: <AccessDeniedException>
+  <Message>Unable to determine service/operation name to be authorized</Message>
+</AccessDeniedException>
+
+Sun May 10 00:48:57 UTC 2020 : Method response headers: {X-Amzn-Trace-Id=Root=1-5eb74f79-87a7f4b4d658495aa11c4394, Content-Type=application/json}
+Sun May 10 00:48:57 UTC 2020 : Successfully completed execution
+Sun May 10 00:48:57 UTC 2020 : Method completed with status: 200
+
 -----------------------------------------------------------------------------
 -----------------------------------------------------------------------------
 -----------------------------------------------------------------------------
