@@ -1,5 +1,6 @@
  24 - May - 2020 - Sunday :
  --------------------------
+ 
  ERROR: Command errored out with exit status 1:
      command: /Users/sai/anaconda3/envs/py37/bin/python -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/private/var/folders/0n/2zpnf3mn1fg1dghpb2007c6w0000gn/T/pip-install-ykxrdgs6/mysqlclient/setup.py'"'"'; __file__='"'"'/private/var/folders/0n/2zpnf3mn1fg1dghpb2007c6w0000gn/T/pip-install-ykxrdgs6/mysqlclient/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' egg_info --egg-base /private/var/folders/0n/2zpnf3mn1fg1dghpb2007c6w0000gn/T/pip-install-ykxrdgs6/mysqlclient/pip-egg-info
          cwd: /private/var/folders/0n/2zpnf3mn1fg1dghpb2007c6w0000gn/T/pip-install-ykxrdgs6/mysqlclient/
